@@ -1,0 +1,10 @@
+Shapiro-Wilk test p-value: 0.5
+Ljung-Box test p-value: 0.12941
+
+AR Model Coefficients:
+1: 1.0000
+2: -0.0204
+3: 0.1362
+4: 0.2908
+5: -0.1378
+6: 0.2442

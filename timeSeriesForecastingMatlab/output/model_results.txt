@@ -1,0 +1,5 @@
+Final Chosen Model:
+
+Model 2: 
+ARIMA(1, 1, 3) Model:
+Y_t - Y_{t-1} = Z_t - 0.0452*Z_{t-1} + 0.0414*Z_{t-2} + 0.0104*Z_{t-3}

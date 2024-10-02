@@ -1,0 +1,12 @@
+Model 1 with q=2, p=1: AIC = -131.932127
+Model invertiblity: invertible
+Model 2 with q=3, p=1: AIC = -138.500357
+Model invertiblity: invertible
+Model 3 with q=2, p=3: AIC = -13.561241
+Model invertiblity: invertible
+Model 4 with q=3, p=3: AIC = -54.501869
+Model invertiblity: invertible
+Model 5 with q=2, p=5: AIC = 124.191341
+Model invertiblity: invertible
+Model 6 with q=3, p=5: AIC = 70.752632
+Model invertiblity: invertible
