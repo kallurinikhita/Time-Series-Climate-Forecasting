@@ -1,7 +1,111 @@
-This project addresses the impact of global warming by analyzing temperature trends over time on both land and ocean surfaces. Utilizing The Global Land and Ocean-Temperature Anomaly Time Series dataset, which examines anomalies in annual mean temperature from pre-industial levels, the study aims to forecast future temperature changes. The dataset, sourced from NASA's GISS Surface Temperature Analysis and NOAA National Climatic Data Center, covers the period from 1880 to 2016, although the data used covers from 1905 to 2016, occurring after the pre-industrial so that the data is uniform. The analysis incorporates the assessment of the necessity for time series transformations, such as Box-Cox and log transformations, and incorporates seasonal and trend differencing to achieve stationarity of data. Multiple SARIMA models are fitted for forecasting, with model selection guided by the Akaike Information Criterion (AICc). The chosen model was a tested for normality through the process of diagnostic checking. The chosen model, SARIMA(2,1,2)(1,1,1)12, exhibits invertibility and successfully passes normality tests, qualifying it for forecasting.
+# Climate Time Series Forecasting (SARIMA)
 
-It's important to acknowledge that the complexity of the data, influenced by factors like the inherent variability of the climate system, natural disasters, volcanic eruptions, and unpredictable shifts in human contributions to emissions due to technological advances or events such as the COVID-19 pandemic, introduces nuances in the data. Consequently, deviations from the general pattern may occur, as is common with most data. Despite this, the final model slightly deviates from the observations in the actual dataset, although the confidence intervals effectively encompass the values. 
+## Overview
 
-The chosen final model was:
-(1 − 0.1619(0.5425)B − 0.2730(0.1588)B2 − 1.3011(0.5740)B3 + 0.3244(0.5712)B4)(1 − B)(1 − B12)Yt = (1 + 1.4288(0.1457)B + 0.3792(0.2332)B3)Zt
-sigma2 = 0.01585233
+This project analyzes long-term global temperature trends and forecasts future climate patterns using time series modeling. Using historical land and ocean temperature anomaly data, we model deviations from pre-industrial baselines to better understand the trajectory of global warming.
+
+---
+
+## Dataset
+
+* Source: NASA GISS Surface Temperature Analysis & NOAA National Climatic Data Center
+* Time range: 1905–2016
+* Variable: Global land and ocean temperature anomalies
+
+The dataset captures annual mean temperature deviations relative to pre-industrial levels, providing a standardized measure of climate change over time.
+
+---
+
+## Objective
+
+* Analyze long-term temperature trends
+* Transform and prepare time series data for modeling
+* Build and evaluate forecasting models
+* Predict future global temperature anomalies
+
+---
+
+## Methodology
+
+### 1. Data Preprocessing
+
+* Checked for stationarity
+* Applied transformations:
+
+  * Log transformation
+  * Box-Cox transformation
+* Performed:
+
+  * Trend differencing
+  * Seasonal differencing
+
+---
+
+### 2. Model Selection
+
+* Evaluated multiple **SARIMA models**
+* Used **Akaike Information Criterion (AICc)** for model comparison
+* Selected best-performing model based on:
+
+  * Fit quality
+  * Residual diagnostics
+
+---
+
+### 3. Final Model
+
+SARIMA(2,1,2)(1,1,1)_{12}
+
+* Satisfies stationarity and invertibility conditions
+* Residuals pass normality checks
+* Suitable for forecasting
+
+---
+
+## Results & Insights
+
+* The model captures overall upward temperature trends consistent with global warming
+* Forecasts align closely with observed values
+* Confidence intervals successfully capture true observations
+
+However:
+
+* Some deviations occur due to:
+
+  * Natural climate variability
+  * Volcanic activity
+  * External shocks (e.g., COVID-19, emissions changes)
+
+---
+
+## Key Takeaways
+
+* SARIMA models can effectively model long-term climate trends
+* Climate data contains inherent variability that limits perfect prediction
+* Forecasting must account for both statistical patterns and real-world uncertainties
+
+---
+
+## Limitations
+
+* Does not explicitly model external drivers (e.g., CO₂ emissions, policy changes)
+* Sensitive to structural breaks in climate patterns
+* Assumes historical trends continue into the future
+
+---
+
+## Future Work
+
+* Incorporate exogenous variables (e.g., emissions, ENSO indices)
+* Explore machine learning models (LSTM, Transformers)
+* Extend dataset beyond 2016
+* Compare with climate simulation models
+
+---
+
+## Tech Stack
+
+* Python
+* statsmodels
+* pandas, numpy
+* matplotlib
